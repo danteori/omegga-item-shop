@@ -20,9 +20,9 @@ export default class Plugin implements OmeggaPlugin<Config, Storage> {
       this.omegga.broadcast(`ITEM SHOPE TEST!`);
     });
 
-    this.omegga.on('cmd:GIVEITEMPLZ', (speaker: string) => {
+    this.omegga.on('cmd:itemplz', (speaker: string) => {
       const player = this.omegga.getPlayer(speaker);
-      player.giveItem('Weapon_Tomahawk');
+      player.giveItem('Weapon_Bazooka');
     });
 
     /*
