@@ -17,7 +17,7 @@ export default class Plugin implements OmeggaPlugin<Config, Storage> {
   async init() {
     // Write your plugin!
     this.omegga.on('cmd:testitemshop', (speaker: string) => {
-      this.omegga.broadcast(`Hello, ${speaker}!`);
+      this.omegga.broadcast(`ITEM SHOPE TEST!`);
     });
 
     return { registeredCommands: ['test'] };
