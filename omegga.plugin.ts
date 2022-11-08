@@ -35,7 +35,7 @@ export default class Plugin implements OmeggaPlugin<Config, Storage> {
     }
     */
 
-    return { registeredCommands: ['test'] };
+    return { registeredCommands: ['test', 'itemplz'] };
   }
 
   async stop() {
