@@ -1,4 +1,5 @@
 import OmeggaPlugin, { OL, PS, PC } from 'omegga';
+import { BrickInteraction } from '../omegga-test/omegga';
 
 type Config = { foo: string };
 type Storage = { bar: string };
@@ -63,6 +64,14 @@ export default class Plugin implements OmeggaPlugin<Config, Storage> {
       '[2] - <b>Heavy Assault Rifle</b> - <color="00ff00">$0</color>',
       '[3] - <b>Bow</b> - <color="00ff00">$0</color>',
       '[4] - <color="ff00ff"><b>Mystery Item</b></color> - <color="00ff00">$1</color>');
+    });
+
+    this.omegga.on('interact', (interaction: BrickInteraction) => {
+      
+      if(interaction.json){
+        let player = this.omegga.findPlayerByName(interaction.player.name);
+        Omegga.whisper(player, "<emoji>dead</>");
+      }
     });
 
     return { registeredCommands: ['test', 'itemplz', 'itemshop', 'buyitem'] };
